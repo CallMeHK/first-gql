@@ -1,4 +1,7 @@
 import * as React from "react";
+import { MyClass } from "./MyClass";
+import { MyComp } from "./MyComp";
+
 interface IProps {
   compiler: string;
   framework: string;
@@ -7,11 +10,15 @@ interface IProps {
 export class Hello extends React.Component<IProps, {}> {
   render() {
     return (
-      <h1>
-        This is a {this.props.framework} application! using{" "}
-        {this.props.compiler} with {this.props.bundler}
-      </h1>
+      <div>
+        <h1>
+          This is a {this.props.framework} application! using{" "}
+          {this.props.compiler} with {this.props.bundler}
+        </h1>
+        <MyClass name="My dude" isMarried={true} />
+        <MyClass isMarried={true} />
+        <MyComp name="Ty" />
+      </div>
     );
   }
 }
- 
